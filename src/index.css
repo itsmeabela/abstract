@@ -27,6 +27,7 @@ a {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 
   width: 100%;
   height: 3.5rem;
@@ -79,7 +80,7 @@ a {
 
 /* begin hero */
 .hero_section {
-  width: 100vw;
+  width: 100%;
   height: 80vh;
 
   background: var(--lightblue);
@@ -123,6 +124,69 @@ a {
 }
 /* end hero */
 
+/* begin main */
+.main_section {
+  padding: 0 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main_container {
+  display: flex;
+  margin: 5rem 2rem;
+  height: 8rem;
+}
+.main_container img {
+  margin-right: 15px;
+  padding: 10px;
+}
+.main_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main_content a {
+  color: var(--lightpurple);
+  transition: transform 0.3s;
+}
+.main_content a:hover {
+  cursor: pointer;
+  transform: translateX(5px);
+}
+/* end main */
+
+/* begin footer */
+.footer {
+  padding: 2rem 50px;
+  background-color: var(--black);
+  color: var(--white);
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.col h3 {
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+
+.col li {
+  list-style: none;
+  padding-left: 0;
+}
+.col ul li p {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.col ul li a {
+  color: white;
+}
+.col:last-child {
+  margin-top: 10rem;
+}
+/* end footer */
+
+/* media query goes here */
 @media (max-width: 1320px) {
   .header {
     padding: 0 50px;
@@ -132,6 +196,14 @@ a {
   }
   .hero_input-content {
     width: 70%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .main_section {
+    grid-template-columns: 1fr;
+  }
+  .col:last-child {
+    margin: 0;
   }
 }
 @media (max-width: 720px) {
